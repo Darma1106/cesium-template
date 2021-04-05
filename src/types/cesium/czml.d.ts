@@ -1,3 +1,5 @@
+import * as enums from './enums'
+
 /**
  * @example 'id#billboard.scale'
  */
@@ -229,11 +231,11 @@ export interface DeletableProperty {
 
 export interface InterpolatableProperty {
   epoch?: string
-  interpolationAlgorithm?: InterpolationAlgorithmValue
+  interpolationAlgorithm?: enums.InterpolationAlgorithmValue
   interpolationDegree?: number
-  forwardExtrapolationType?: ExtrapolationValue
+  forwardExtrapolationType?: enums.ExtrapolationValue
   forwardExtrapolationDuration?: number
-  backwardExtrapolationType?: ExtrapolationValue
+  backwardExtrapolationType?: enums.ExtrapolationValue
   backwardExtrapolationDuration?: number
 }
 
@@ -263,7 +265,7 @@ export interface Font extends DeletableProperty {
 }
 
 export interface LabelStyle extends DeletableProperty {
-  labelStyle?: LabelStyleValue
+  labelStyle?: enums.LabelStyleValue
   reference?: ReferenceValue
 }
 
@@ -274,7 +276,7 @@ export interface Color extends DeletableProperty, InterpolatableProperty {
 }
 
 export interface CornerType extends DeletableProperty {
-  cornerType?: CornerTypeValue
+  cornerType?: enums.CornerTypeValue
   reference?: ReferenceValue
 }
 
@@ -291,7 +293,7 @@ export interface ColorBlendMode extends DeletableProperty {
 }
 
 export interface ClassificationType extends DeletableProperty {
-  classificationType?: ClassificationTypeValue
+  classificationType?: enums.ClassificationTypeValue
   reference?: ReferenceValue
 }
 
@@ -311,17 +313,17 @@ export interface EyeOffset extends DeletableProperty, InterpolatableProperty {
 }
 
 export interface HorizontalOrigin extends DeletableProperty {
-  horizontalOrigin?: HorizontalOriginValue
+  horizontalOrigin?: enums.HorizontalOriginValue
   reference?: ReferenceValue
 }
 
 export interface VerticalOrigin extends DeletableProperty {
-  verticalOrigin?: VerticalOriginValue
+  verticalOrigin?: enums.VerticalOriginValue
   reference?: ReferenceValue
 }
 
 export interface HeightReference extends DeletableProperty {
-  heightReference?: HeightReferenceValue
+  heightReference?: enums.HeightReferenceValue
   reference?: ReferenceValue
 }
 
@@ -391,7 +393,7 @@ export interface Scale {
 }
 
 export interface StripeOrientation extends DeletableProperty {
-  stripeOrientation?: StripeOrientationValue
+  stripeOrientation?: enums.StripeOrientationValue
   reference?: ReferenceValue
 }
 
@@ -537,7 +539,7 @@ export interface AlignedAxis extends DeletableProperty, InterpolatableProperty {
 }
 
 export interface ArcType extends DeletableProperty {
-  arcType?: ArcTypeValue
+  arcType?: enums.ArcTypeValue
   reference?: ReferenceValue
 }
 
@@ -566,17 +568,17 @@ export interface ViewFrom extends DeletableProperty, InterpolatableProperty {
 }
 
 export interface ShadowMode extends DeletableProperty {
-  shadowMode?: ShadowModeValue
+  shadowMode?: enums.ShadowModeValue
   reference?: ReferenceValue
 }
 
 export interface SensorVolumePortionToDisplay extends DeletableProperty {
-  portionToDisplay?: SensorVolumePortionToDisplayValue
+  portionToDisplay?: enums.SensorVolumePortionToDisplayValue
   reference?: ReferenceValue
 }
 
 export interface PositionList extends DeletableProperty {
-  referenceFrame?: ReferenceFrameValue
+  referenceFrame?: enums.ReferenceFrameValue
   cartesian?: Cartesian3ListValue
   cartographicRadians?: CartographicRadiansListValue
   cartographicDegrees?: CartographicDegreesListValue
@@ -699,8 +701,8 @@ export interface Cylinder {
 export interface Clock {
   currentTime: Time
   multiplier?: number
-  range?: ClockRange
-  step?: ClockStep
+  range?: enums.ClockRange
+  step?: enums.ClockStep
 }
 
 export interface ConicSensor extends Sensor {
@@ -728,21 +730,21 @@ export interface CustomProperty
   unitSpherical?: UnitSphericalValue
   rgba?: RgbaValue
   rgbaf?: RgbafValue
-  colorBlendMode?: ColorBlendModeValue
-  cornerType?: CornerTypeValue
-  heightReference?: HeightReferenceValue
-  horizontalOrigin?: HorizontalOriginValue
-  labelStyle?: LabelStyleValue
+  colorBlendMode?: enums.ColorBlendModeValue
+  cornerType?: enums.CornerTypeValue
+  heightReference?: enums.HeightReferenceValue
+  horizontalOrigin?: enums.HorizontalOriginValue
+  labelStyle?: enums.LabelStyleValue
   number?: DoubleValue
   nearFarScalar?: NearFarScalarValue
   unitQuaternion?: UnitQuaternionValue
-  shadowMode?: ShadowModeValue
+  shadowMode?: enums.ShadowModeValue
   string?: string
-  stripeOrientation?: StripeOrientationValue
+  stripeOrientation?: enums.StripeOrientationValue
   wsen?: CartographicRectangleRadiansValue
   wsenDegrees?: CartographicRectangleDegreesValue
   uri?: UriValue
-  verticalOrigin?: VerticalOriginValue
+  verticalOrigin?: enums.VerticalOriginValue
 }
 
 export interface Ellipse {
@@ -925,7 +927,7 @@ export interface Wall {
 }
 
 export interface Position extends DeletableProperty, InterpolatableProperty {
-  referenceFrame?: ReferenceFrameValue
+  referenceFrame?: enums.ReferenceFrameValue
   cartesian?: Cartesian3Value
   cartographicRadians?: CartographicRadiansValue
   cartographicDegrees?: CartographicDegreesValue
@@ -937,16 +939,16 @@ export interface Label {
   show?: TypeBoolean | boolean
   text: TypeString | string
   font?: Font | string
-  style?: LabelStyle | LabelStyleValue
+  style?: LabelStyle | enums.LabelStyleValue
   scale?: TypeDouble | DoubleValue
   showBackground?: TypeBoolean | boolean
   backgroundColor?: Color
   backgroundPadding?: BackgroundPadding
   pixelOffset?: PixelOffset
   eyeOffset?: EyeOffset
-  horizontalOrigin?: HorizontalOrigin | HorizontalOriginValue
-  verticalOrigin?: VerticalOrigin | VerticalOriginValue
-  heightReference?: HeightReference | HeightReferenceValue
+  horizontalOrigin?: HorizontalOrigin | enums.HorizontalOriginValue
+  verticalOrigin?: VerticalOrigin | enums.VerticalOriginValue
+  heightReference?: HeightReference | enums.HeightReferenceValue
   fillColor?: Color
   outlineColor?: Color
   outlineWidth?: TypeDouble | DoubleValue
